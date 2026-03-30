@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Fredoka", sans-serif;
+  background: linear-gradient(135deg, #fdf2ff, #eef9ff, #fef9e7);
+  color: #2d2d2d;
+}
+
+.app {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  margin-bottom: 0.3rem;
+  color: #4b3f72;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+.logo-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.logo-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #9be7ff, #ffd6a5, #caffbf);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-text span:first-child {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #4b3f72;
+}
+
+.logo-text span:last-child {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.card,
+.detail-box,
+.auth-card,
+.signup-card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.card {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card img {
+  border-radius: 16px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+  background: white;
+  padding: 6px;
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.detail-box {
+  margin-top: 1rem;
+  background: linear-gradient(135deg, #dff7ff, #fff5e8);
+}
+
+.detail-image {
+  width: 140px;
+  height: 140px;
+  display: block;
+  margin-bottom: 1rem;
+  background: white;
+  padding: 8px;
+  border-radius: 18px;
+}
+
+input,
+select,
+button,
+textarea {
+  padding: 0.8rem 0.9rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+  font-family: inherit;
+}
+
+input,
+select,
+textarea {
+  border: 2px solid #dbeafe;
+  background: #ffffff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #7dd3fc;
+  box-shadow: 0 0 0 3px rgba(125, 211, 252, 0.25);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease;
+}
+
+button:hover {
+  transform: scale(1.03);
+  opacity: 0.95;
+}
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #fdf2ff, #eef9ff, #fef9e7);
+}
+
+.auth-card,
+.signup-card {
+  width: min(760px, 92%);
+}
+
+.signup-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: min(450px, 90%);
+  margin: 0 auto;
+}
+
+.signup-card input,
+.signup-card textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.auth-title,
+.signup-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #4b3f72;
+  background: linear-gradient(90deg, #e9d5ff, #bfdbfe, #fde68a);
+  padding: 0.8rem 1rem;
+  border-radius: 14px;
+}
+
+.auth-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.auth-row label {
+  background: #f3f4f6;
+  padding: 0.8rem;
+  border-radius: 12px;
+}
+
+.auth-actions,
+.signup-actions,
+.create-account-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.login-btn,
+.signup-btn {
+  background: linear-gradient(135deg, #84cc16, #22c55e);
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 14px;
+}
+
+.create-btn {
+  background: linear-gradient(135deg, #fb923c, #f97316);
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 14px;
+}
+
+.back-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.back-link a {
+  color: #4b3f72;
+  font-weight: 500;
+}
+
+.logo-footer {
+  margin-top: 2rem;
+  text-align: center;
+  color: #7c83fd;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.kid-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #f9a8d4, #c4b5fd);
+  color: white;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  margin-bottom: 0.7rem;
+}
+
+.back-btn {
+  margin-bottom: 1rem;
+  background: #e5e7eb;
+  color: #333;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  .auth-row {
+    grid-template-columns: 1fr;
+  }
+
+  .logo-header {
+    flex-direction: column;
+    text-align: center;
+  }
+}
