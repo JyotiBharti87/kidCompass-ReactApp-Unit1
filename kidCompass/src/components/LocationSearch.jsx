@@ -1,3 +1,4 @@
+// Input field to search kids by city or zip code
 function LocationSearch({ locationTerm, setLocationTerm }) {
   return (
     <div>

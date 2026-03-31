@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "../App.css";
+import Button from "./Button";
 
 function LoginPage() {
   return (
@@ -19,7 +20,7 @@ function LoginPage() {
 
         <div className="auth-actions">
           <Link to="/browse">
-            <button className="login-btn">Login</button>
+            <Button text="Login" className="login-btn" />
           </Link>
         </div>
 

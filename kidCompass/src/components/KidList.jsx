@@ -1,5 +1,7 @@
+// Renders a list of kid cards
 import KidCard from "./KidCard";
 
+// Show message if no kids match filters
 function KidList({ kids }) {
   if (kids.length === 0) {
     return <p>No kids match your filters.</p>;

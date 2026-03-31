@@ -1,3 +1,4 @@
+// Dropdown to filter kids by age range
 function FilterBar({ selectedAge, setSelectedAge }) {
   return (
     <div>

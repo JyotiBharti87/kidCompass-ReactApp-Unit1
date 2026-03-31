@@ -1,3 +1,5 @@
+// Main page that handles search, filtering, and displaying kid profiles
+
 import { useState } from "react";
 import kidsData from "../kidsData.json";
 import LocationSearch from "./LocationSearch";
@@ -6,9 +8,12 @@ import KidList from "./KidList";
 import "../App.css";
 
 function BrowsePage() {
+  //State for search input
   const [locationTerm, setLocationTerm] = useState("");
+  //State to store selected age filter
   const [selectedAge, setSelectedAge] = useState("All");
 
+  //filter kids by Location and age
   const filteredKids = kidsData.filter((kid) => {
     const matchesLocation =
       kid.city.toLowerCase().includes(locationTerm.toLowerCase()) ||

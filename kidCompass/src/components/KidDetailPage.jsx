@@ -1,19 +1,24 @@
+// Displays full details for a selected kid using route parameter (id)
+
 import { useParams, useNavigate } from "react-router-dom";
 import kidsData from "../kidsData.json";
 import "../App.css";
+import Button from "./Button";
 
 function KidDetailPage() {
-  const { id } = useParams();
+  const { id } = useParams(); // Get the kid ID from the URL
   const navigate = useNavigate();
 
-  const kid = kidsData.find((k) => k.id === Number(id));
+  const kid = kidsData.find((k) => k.id === Number(id)); // Find the matching kid from JSON data
 
   if (!kid) {
     return (
       <main className="app">
-        <button className="back-btn" onClick={() => navigate(-1)}>
-          ⬅ Back
-        </button>
+        <Button
+          text="⬅ Back"
+          className="back-btn"
+          onClick={() => navigate(-1)} // Navigate back to previous page
+        />
         <p>Kid not found.</p>
       </main>
     );
@@ -34,20 +39,28 @@ function KidDetailPage() {
 
         <h1>{kid.name}</h1>
         <p>
-          <strong>Age:</strong> {kid.age}
-        </p>
-        <p>
-          <strong>Gender:</strong> {kid.gender}
-        </p>
-        <p>
-          <strong>City:</strong> {kid.city}
-        </p>
-        <p>
-          <strong>Zip Code:</strong> {kid.zipCode}
-        </p>
-        <p>
           <strong>About:</strong> {kid.about}
         </p>
+        <table className="kid-table">
+          <tbody>
+            <tr>
+              <th>Age</th>
+              <td>{kid.age}</td>
+            </tr>
+            <tr>
+              <th>Gender</th>
+              <td>{kid.gender}</td>
+            </tr>
+            <tr>
+              <th>City</th>
+              <td>{kid.city}</td>
+            </tr>
+            <tr>
+              <th>Zip Code</th>
+              <td>{kid.zipCode}</td>
+            </tr>
+          </tbody>
+        </table>
 
         <strong>Hobbies:</strong>
         <ul>

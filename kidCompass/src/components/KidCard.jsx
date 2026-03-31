@@ -1,7 +1,9 @@
+// Displays a summary card for each kid profile
 import { useNavigate } from "react-router-dom";
+import Button from "./Button";
 
 function KidCard({ kid }) {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Navigate to detail page when user clicks "View Details"
 
   return (
     <div className="card">
@@ -16,7 +18,7 @@ function KidCard({ kid }) {
       <p>City: {kid.city}</p>
       <p>Zip Code: {kid.zipCode}</p>
 
-      <button onClick={() => navigate(`/kid/${kid.id}`)}>View Details</button>
+      <Button text="View Details" onClick={() => navigate(`/kid/${kid.id}`)} />
     </div>
   );
 }
