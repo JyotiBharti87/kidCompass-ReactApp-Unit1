@@ -8,7 +8,7 @@ function LocationSearch({ locationTerm, setLocationTerm }) {
         type="text"
         value={locationTerm}
         onChange={(event) => setLocationTerm(event.target.value)}
-        placeholder="Enter Chesterfield or 63011"
+        placeholder="Enter Ballwin or 63011"
       />
     </div>
   );
