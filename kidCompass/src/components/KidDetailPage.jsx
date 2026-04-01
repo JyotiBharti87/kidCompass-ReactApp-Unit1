@@ -1,7 +1,7 @@
 // Displays full details for a selected kid using route parameter (id)
 
 import { useParams, useNavigate } from "react-router-dom";
-import kidsData from "../kidsData.json";
+import kidsData from "../KidsData.json";
 import "../App.css";
 import Button from "./Button";
 
