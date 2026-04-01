@@ -1,7 +1,7 @@
 // Main page that handles search, filtering, and displaying kid profiles
 
 import { useState } from "react";
-import kidsData from "../kidsData.json";
+import kidsData from "../KidsData.json";
 import LocationSearch from "./LocationSearch";
 import FilterBar from "./FilterBar";
 import KidList from "./KidList";
