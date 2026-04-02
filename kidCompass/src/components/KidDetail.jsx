@@ -1,3 +1,4 @@
+//display kid Detail
 function KidDetail({ kid, onClose }) {
   if (!kid) {
     return null;

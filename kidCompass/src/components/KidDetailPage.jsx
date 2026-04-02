@@ -1,4 +1,4 @@
-// Displays full details for a selected kid using route parameter (id)
+// Displays full details for a selected kid using (id)
 
 import { useParams, useNavigate } from "react-router-dom";
 import kidsData from "../KidsData.json";

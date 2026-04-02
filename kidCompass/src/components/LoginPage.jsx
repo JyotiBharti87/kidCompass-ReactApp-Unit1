@@ -26,7 +26,7 @@ function LoginPage() {
 
         <div className="create-account-wrap">
           <Link to="/signup">
-            <button className="create-btn">Create Account</button>
+            <Button text="Create Account" className="create-btn" />
           </Link>
         </div>
 
