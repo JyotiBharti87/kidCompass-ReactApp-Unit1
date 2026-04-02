@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import kidsData from "../KidsData.json";
 import "../App.css";
 import Button from "./Button";
+import KidDetail from "./KidDetail";
 
 function KidDetailPage() {
   const { id } = useParams(); // Get the kid ID from the URL
@@ -32,7 +33,7 @@ function KidDetailPage() {
 
       <div className="detail-box">
         <img
-          src={`https://api.dicebear.com/7.x/thumbs/svg?seed=${kid.name}`}
+          src={`https://api.dicebear.com/7.x/adventurer/svg?seed=${kid.name}`}
           alt={kid.name}
           className="detail-image"
         />

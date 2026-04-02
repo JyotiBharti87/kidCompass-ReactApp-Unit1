@@ -22,10 +22,7 @@ function App() {
           path="/signup"
           element={<SignupPage setUserName={setUserName} />}
         />
-        <Route
-          path="/browse"
-          element={<BrowsePage userNameserName={userName} />}
-        />
+        <Route path="/browse" element={<BrowsePage userName={userName} />} />
         <Route path="/kid/:id" element={<KidDetailPage />} />
       </Routes>
     </BrowserRouter>
