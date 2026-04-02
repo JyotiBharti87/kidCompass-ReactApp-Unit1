@@ -1,35 +1,58 @@
+import Button from "./Button";
 //display kid Detail
-function KidDetail({ kid, onClose }) {
+function KidDetail({ kid, requested, setRequested }) {
   if (!kid) {
     return null;
   }
 
   return (
     <div className="detail-box">
-      <h2>{kid.name}</h2>
+      <img
+        src={`https://api.dicebear.com/7.x/adventurer/svg?seed=${kid.name}`}
+        alt={kid.name}
+        className="detail-image"
+      />
+      <div className="detail-header">
+        <h1>{kid.name}</h1>
+        <Button
+          text={requested ? "Sent ✅" : "Connect"}
+          onClick={() => setRequested(true)}
+          disabled={requested}
+          className="connect-btn"
+        />
+      </div>
+
       <p>
-        <strong>Age:</strong> {kid.age}
+        <strong>About:</strong>
+        {kid.about}
       </p>
-      <p>
-        <strong>Gender:</strong> {kid.gender}
-      </p>
-      <p>
-        <strong>City:</strong> {kid.city}
-      </p>
-      <p>
-        <strong>Zip Code:</strong> {kid.zipCode}
-      </p>
-      <p>
-        <strong>About:</strong> {kid.about}
-      </p>
+
+      <table className="kid-table">
+        <tbody>
+          <tr>
+            <th>Age</th>
+            <td>{kid.age}</td>
+          </tr>
+          <tr>
+            <th>Gender</th>
+            <td>{kid.gender}</td>
+          </tr>
+          <tr>
+            <th>City</th>
+            <td>{kid.city}</td>
+          </tr>
+          <tr>
+            <th>Zip Code</th>
+            <td>{kid.zipCode}</td>
+          </tr>
+        </tbody>
+      </table>
 
       <strong>Hobbies:</strong>
       <ul>
         {kid.hobbies &&
-          kid.hobbies.map((hobby, index) => <li key={index}>{hobby}</li>)}
+          kid.hobbies.map((hobby) => <li key={hobby}>{hobby}</li>)}
       </ul>
-
-      <button onClick={onClose}>Close Details</button>
     </div>
   );
 }
