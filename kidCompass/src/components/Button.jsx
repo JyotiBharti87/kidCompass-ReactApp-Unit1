@@ -1,5 +1,7 @@
 // Reusable button component used across multiple pages
 
+import { Link } from "react-router";
+
 function Button({ text, onClick, className = "", type = "button" }) {
   return (
     <button type={type} className={className} onClick={onClick}>
@@ -7,5 +9,4 @@ function Button({ text, onClick, className = "", type = "button" }) {
     </button>
   );
 }
-
 export default Button;

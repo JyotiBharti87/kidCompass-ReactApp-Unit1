@@ -1,53 +1,69 @@
 // Signup form to collect user and child information
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../App.css";
-import Button from "./Button";
 
-function SignupPage() {
+function SignupPage({ setUserName }) {
+  const [name, setName] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setUserName(name);
+    navigate("/browse");
+  };
   return (
-    <main className="auth-page">
+    <div className="auth-page">
       <div className="signup-card">
         <h2 className="signup-title">Please Fill Out Your Information</h2>
 
-        <input type="text" placeholder="Enter your Full Name" required />
-        <input
-          type="number"
-          placeholder="Enter your Age"
-          required
-          min="18" //age validation required 18
-        />
-        <input type="text" placeholder="Enter your Location" required />
-        <input
-          type="tel"
-          placeholder="Enter your Phone Number"
-          pattern="[0-9]{10}" // Phone number validation only 10 digits allowed
-          maxLength="10"
-          required
-        />
-        <input type="text" placeholder="Enter your Child Name" required />
-        <input
-          type="number"
-          placeholder="Enter your Child Age"
-          required
-          min="1" //age validation
-          max="14"
-        />
-        <input type="text" placeholder="Enter your Child Hobbies" />
-        <textarea placeholder="Optional Notes"></textarea>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Enter your Full Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
 
-        <div className="signup-actions">
-          <Link to="/browse">
-            <Button text="Sign Up" className="signup-btn" />
-          </Link>
-        </div>
+          <input type="number" placeholder="Enter your Age" required min="18" />
+
+          <input type="text" placeholder="Enter your Location" required />
+
+          <input
+            type="tel"
+            placeholder="Enter your Phone Number"
+            pattern="[0-9]{10}"
+            maxLength="10"
+            required
+          />
+
+          <input type="text" placeholder="Enter your Child Name" required />
+
+          <input
+            type="number"
+            placeholder="Enter your Child Age"
+            required
+            min="1"
+            max="14"
+          />
+
+          <input type="text" placeholder="Enter your Child Hobbies" />
+
+          <textarea placeholder="Optional Notes"></textarea>
+
+          <div className="signup-actions">
+            <button type="submit" className="signup-btn">
+              Sign Up
+            </button>
+          </div>
+        </form>
 
         <div className="back-link">
           <Link to="/">Back to Login</Link>
         </div>
-
-        <div className="logo-footer">🧭 KidCompass</div>
       </div>
-    </main>
+    </div>
   );
 }
 

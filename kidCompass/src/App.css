@@ -2,16 +2,19 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f5f7fa;
+  background-color: #eaf6ff;
   color: #333;
+}
+#root {
+  min-height: 100vh;
 }
 
 /* Main container */
 .app {
-  width: 90%;
-  max-width: 1100px;
+  width: min(1200px, 94%);
   margin: auto;
-  padding: 20px;
+  padding: 100px 20px 30px;
+  box-sizing: border-box;
 }
 
 /* Headings */
@@ -23,48 +26,56 @@ h2 {
 /* Controls (search + filter) */
 .controls {
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
 }
 
 /* Grid layout for cards */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 220px));
-  gap: 15px;
-  justify-content: start;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  align-items: stretch;
 }
 
 /* Card styling */
 .card {
   background: white;
-  padding: 15px;
-  border-radius: 10px;
+  padding: 20px;
+  border-radius: 14px;
   text-align: center;
-  border: 1px solid #ddd;
-  transition: transform 0.2s;
+  border: 2px solid #cfe7f8;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  animation: fadeIn 0.3s ease;
 }
 
 /* Hover effect */
 .card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.1);
 }
 
 /* Image */
 .card img {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 10px;
+  width: 90px;
+  height: 90px;
+  margin-bottom: 12px;
+  object-fit: cover;
 }
 
 /* Buttons */
 button {
-  padding: 8px 12px;
+  padding: 10px, 14px;
   border: none;
   background-color: #4a90e2;
   color: white;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  font-weight: 600;
 }
 
 button:hover {
@@ -76,16 +87,24 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: calc(100vh - 70px);
+  padding: 100px 20px 40px;
+  box-sizing: border-box;
 }
 
 /* Form container */
 .signup-card,
 .auth-card {
   background: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 300px;
+  padding: 32px;
+  border-radius: 18px;
+  width: min(460px, 92vw);
+}
+
+.signup-card h2,
+.auth-card h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 
 /* Inputs */
@@ -93,16 +112,20 @@ input,
 textarea,
 select {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
   border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
 /* Detail page */
 .detail-box {
   background: white;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 24px;
+  border-radius: 14px;
+  border: 2px solid #cfe7f8;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
 }
 
 /* Table */
@@ -128,26 +151,6 @@ th {
   }
 }
 
-.card {
-  animation: fadeIn 0.3s ease;
-}
-
-/* Responsive design */
-@media (max-width: 900px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .controls {
-    flex-direction: column;
-  }
-}
 .detail-image {
   width: 120px;
   height: 120px;
@@ -156,6 +159,8 @@ th {
   margin: 0 auto 10px;
   border-radius: 50%;
 }
+
+/* Welcome page */
 .welcome-page {
   min-height: 100vh;
   position: relative;
@@ -164,7 +169,7 @@ th {
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  background: linear-gradient(135deg, #ffd9ec 0%, #d7ecff 50%, #fff2b8 100%);
+  background: linear-gradient(135deg, #dff2ff 0%, #cfe9ff 50%, #f1faff 100%);
 }
 
 /* soft background bubbles */
@@ -186,7 +191,7 @@ th {
 .bubble-two {
   width: 140px;
   height: 140px;
-  background: #ffe0ef;
+  background: #d6ecff;
   bottom: 12%;
   left: 18%;
 }
@@ -194,7 +199,7 @@ th {
 .bubble-three {
   width: 170px;
   height: 170px;
-  background: #fff7d8;
+  background: #f4fbff;
   top: 10%;
   right: 10%;
 }
@@ -207,26 +212,24 @@ th {
   align-items: center;
 }
 
-/* actual half moon / arched banner */
+/* actual banner */
 .moon-banner {
   width: min(560px, 88vw);
   min-height: 280px;
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(8px);
   border: 3px solid rgba(255, 255, 255, 0.8);
   box-shadow: 0 18px 35px rgba(67, 57, 95, 0.14);
   text-align: center;
   padding: 2.2rem 2rem 1.8rem;
   position: relative;
-
-  /* half moon shape */
   border-radius: 280px 280px 40px 40px;
 }
 
 .banner-pill {
   display: inline-block;
-  background: #ecd9df;
-  color: #ff7b93;
+  background: #d8ecfa;
+  color: #2f6fa3;
   padding: 0.45rem 1rem;
   border-radius: 999px;
   font-size: 0.9rem;
@@ -337,6 +340,62 @@ th {
   }
 }
 
+/* Header */
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #dcecf8;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #2f2b52;
+}
+
+/* Welcome message after signin */
+.user-welcome {
+  background: white;
+  border: 2px solid #cfe7f8;
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #2f2b52;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .moon-banner {
     width: 92vw;
@@ -376,5 +435,20 @@ th {
   .kid-bottom-right {
     right: 10%;
     bottom: 10%;
+  }
+}
+
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  .signup-card,
+  .auth-card {
+    padding: 24px 18px;
   }
 }

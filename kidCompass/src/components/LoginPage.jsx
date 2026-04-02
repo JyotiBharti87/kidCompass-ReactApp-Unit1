@@ -1,38 +1,47 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../App.css";
-import Button from "./Button";
 
-function LoginPage() {
+function LoginPage({ setUserName }) {
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    //validation
+    if (!name || !password) {
+      alert("Please enter name and password");
+      return;
+    }
+    setUserName(name);
+    navigate("/browse");
+  };
   return (
-    <main className="auth-page">
+    <div className="auth-page">
       <div className="auth-card">
-        <h1 className="auth-title">Welcome Back</h1>
-
-        <div className="auth-row">
-          <label>User Name</label>
-          <input type="text" placeholder="Enter your User Name" />
+        <h2>Login</h2>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Enter your Name."
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Enter password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <button type="submit">Sign In</button>
+        </form>
+        <div className="back-link">
+          <Link to="/signup">Create an account</Link>
         </div>
-
-        <div className="auth-row">
-          <label>Password</label>
-          <input type="password" placeholder="Enter your Password" />
-        </div>
-
-        <div className="auth-actions">
-          <Link to="/browse">
-            <Button text="Login" className="login-btn" />
-          </Link>
-        </div>
-
-        <div className="create-account-wrap">
-          <Link to="/signup">
-            <Button text="Create Account" className="create-btn" />
-          </Link>
-        </div>
-
-        <div className="logo-footer">🧭 KidCompass</div>
       </div>
-    </main>
+    </div>
   );
 }
 

@@ -7,7 +7,7 @@ import FilterBar from "./FilterBar";
 import KidList from "./KidList";
 import "../App.css";
 
-function BrowsePage() {
+function BrowsePage({ userName }) {
   //State for search input
   const [locationTerm, setLocationTerm] = useState("");
   //State to store selected age filter
@@ -34,15 +34,12 @@ function BrowsePage() {
 
   return (
     <main className="app">
-      <div className="logo-header">
-        <div className="logo-circle">🧭</div>
-        <div className="logo-text">
-          <span>KidCompass</span>
-          <span>Find friends, families, and fun nearby</span>
-        </div>
-      </div>
+      {userName && <div className="user-welcome">Welcome, {userName} 👋 </div>}
+      <h1>Browse Kids</h1>
 
-      <p>Search kids by city or zip code and filter by age.</p>
+      <p className="browse-subtext">
+        Search kids by city or zip code and filter by age.
+      </p>
 
       <div className="controls">
         <LocationSearch
