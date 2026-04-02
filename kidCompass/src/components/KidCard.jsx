@@ -10,7 +10,7 @@ function KidCard({ kid }) {
       <span className="kid-badge">{kid.age} years old</span>
 
       <img
-        src={`https://api.dicebear.com/7.x/thumbs/svg?seed=${kid.name}`}
+        src={`https://api.dicebear.com/7.x/adventurer/svg?seed=${kid.name}`}
         alt={kid.name}
       />
 

@@ -156,3 +156,225 @@ th {
   margin: 0 auto 10px;
   border-radius: 50%;
 }
+.welcome-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #ffd9ec 0%, #d7ecff 50%, #fff2b8 100%);
+}
+
+/* soft background bubbles */
+.bg-bubble {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.28;
+  z-index: 1;
+}
+
+.bubble-one {
+  width: 180px;
+  height: 180px;
+  background: #ffffff;
+  top: 8%;
+  left: 8%;
+}
+
+.bubble-two {
+  width: 140px;
+  height: 140px;
+  background: #ffe0ef;
+  bottom: 12%;
+  left: 18%;
+}
+
+.bubble-three {
+  width: 170px;
+  height: 170px;
+  background: #fff7d8;
+  top: 10%;
+  right: 10%;
+}
+
+.welcome-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* actual half moon / arched banner */
+.moon-banner {
+  width: min(560px, 88vw);
+  min-height: 280px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(8px);
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 18px 35px rgba(67, 57, 95, 0.14);
+  text-align: center;
+  padding: 2.2rem 2rem 1.8rem;
+  position: relative;
+
+  /* half moon shape */
+  border-radius: 280px 280px 40px 40px;
+}
+
+.banner-pill {
+  display: inline-block;
+  background: #ecd9df;
+  color: #ff7b93;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.moon-banner h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.15;
+  color: #2f2b52;
+}
+
+.moon-banner p {
+  margin: 0.9rem 0 0;
+  font-size: 1.05rem;
+  color: #55506b;
+}
+
+/* buttons */
+.welcome-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.6rem;
+  flex-wrap: wrap;
+}
+
+.welcome-buttons a {
+  text-decoration: none;
+}
+
+.login-btn,
+.create-btn {
+  border: none;
+  color: white;
+  padding: 0.9rem 1.6rem;
+  border-radius: 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  min-width: 130px;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.login-btn {
+  background: linear-gradient(135deg, #59c36a, #45af57);
+}
+
+.create-btn {
+  background: linear-gradient(135deg, #ff9a47, #ff7f4d);
+}
+
+.login-btn:hover,
+.create-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* kids around banner */
+.kids-row {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.kid {
+  position: absolute;
+  width: 105px;
+  height: 105px;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.12));
+  animation: floatKid 4s ease-in-out infinite;
+}
+
+.kid-left {
+  left: 10%;
+  top: 20%;
+}
+
+.kid-right {
+  right: 10%;
+  top: 20%;
+  animation-delay: 1.2s;
+}
+
+.kid-bottom-left {
+  left: 18%;
+  bottom: 12%;
+  animation-delay: 1.8s;
+}
+
+.kid-bottom-right {
+  right: 18%;
+  bottom: 12%;
+  animation-delay: 2.2s;
+}
+
+@keyframes floatKid {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@media (max-width: 768px) {
+  .moon-banner {
+    width: 92vw;
+    min-height: 240px;
+    padding: 1.8rem 1.2rem 1.4rem;
+    border-radius: 220px 220px 30px 30px;
+  }
+
+  .moon-banner h1 {
+    font-size: 2rem;
+  }
+
+  .moon-banner p {
+    font-size: 0.98rem;
+  }
+
+  .kid {
+    width: 72px;
+    height: 72px;
+  }
+
+  .kid-left {
+    left: 4%;
+    top: 18%;
+  }
+
+  .kid-right {
+    right: 4%;
+    top: 18%;
+  }
+
+  .kid-bottom-left {
+    left: 10%;
+    bottom: 10%;
+  }
+
+  .kid-bottom-right {
+    right: 10%;
+    bottom: 10%;
+  }
+}
