@@ -2,7 +2,9 @@
 function LocationSearch({ locationTerm, setLocationTerm }) {
   return (
     <div>
-      <label htmlFor="locationSearch">Search by city or zip code: </label>
+      <label htmlFor="locationSearch" className="label">
+        Search by city or zip code:{" "}
+      </label>
       <input
         id="locationSearch"
         type="text"

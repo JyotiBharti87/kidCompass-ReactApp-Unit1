@@ -35,9 +35,9 @@ function BrowsePage({ userName }) {
   return (
     <main className="app">
       {userName && <div className="user-welcome">Welcome, {userName} 👋 </div>}
-      <h1>Browse Kids</h1>
+      <h1 className="label">Browse Kids</h1>
 
-      <p className="browse-subtext">
+      <p className="label">
         Search kids by city or zip code and filter by age.
       </p>
 

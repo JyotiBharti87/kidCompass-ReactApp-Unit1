@@ -2,7 +2,9 @@
 function FilterBar({ selectedAge, setSelectedAge }) {
   return (
     <div>
-      <label htmlFor="ageFilter">Filter by age: </label>
+      <label htmlFor="ageFilter" className="label">
+        Filter by age:
+      </label>
       <select
         id="ageFilter"
         value={selectedAge}
