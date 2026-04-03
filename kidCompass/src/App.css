@@ -2,11 +2,15 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #eaf6ff;
-  color: #333;
+  background-color: var(--light-bg);
+  color: var(--text-color);
 }
-#root {
-  min-height: 100vh;
+:root {
+  --primary-color: #6ec1e4;
+  --secondary-color: #2f6fa3;
+  --accent-color: #ff9a47;
+  --text-color: #2f2b52;
+  --light-bg: #f4fbff;
 }
 
 /* Main container */
@@ -19,9 +23,11 @@ body {
 
 /* Headings */
 h1,
-h2 {
+h2,
+h3 {
   font-size: larger;
   text-align: center;
+  color: var(--secondary-color);
 }
 
 /* Controls (search + filter) */
@@ -56,9 +62,8 @@ h2 {
 .label {
   font-size: 1.1rem !important;
   font-weight: 600;
-  color: #2f2b52;
+  color: var(--secondary-color);
 }
-
 /* Hover effect */
 .card:hover {
   transform: translateY(-5px);
@@ -77,7 +82,7 @@ h2 {
 button {
   padding: 10px 14px;
   border: none;
-  background-color: #4a90e2;
+  background-color: var(--primary-color);
   color: white;
   border-radius: 8px;
   cursor: pointer;
@@ -85,7 +90,7 @@ button {
 }
 
 button:hover {
-  background-color: #357abd;
+  background-color: var(--secondary-color);
 }
 
 /* Signup/Login pages */
@@ -117,14 +122,14 @@ button:hover {
 input,
 textarea,
 select {
+  color: var(--text-color);
   width: 100%;
   padding: 10px 12px;
   margin-bottom: 14px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--secondary-color);
   border-radius: 8px;
   box-sizing: border-box;
 }
-
 /* Detail page */
 .detail-box {
   background: white;
@@ -467,12 +472,17 @@ th {
   }
 }
 .connect-btn:disabled {
-  background-color: #ccc;
+  background-color: var(--accent-color);
   cursor: not-allowed;
 }
 .nav-links {
   margin-left: auto;
+}
+.nav-link {
   text-decoration: none;
   font-weight: 600;
-  color: #2f2b52;
+  color: var(--secondary-color);
+}
+.nav-link:hover {
+  color: var(--primary-color);
 }
