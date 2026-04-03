@@ -11,6 +11,9 @@ body {
   --accent-color: #ff9a47;
   --text-color: #2f2b52;
   --light-bg: #f4fbff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Main container */
@@ -19,6 +22,7 @@ body {
   margin: auto;
   padding: 80px 20px 30px;
   box-sizing: border-box;
+  flex: 1;
 }
 
 /* Headings */
@@ -485,4 +489,10 @@ th {
 }
 .nav-link:hover {
   color: var(--primary-color);
+}
+.app-footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 1rem;
+  color: var(--secondary-color);
 }

@@ -7,6 +7,7 @@ import BrowsePage from "./components/BrowsePage";
 import KidDetailPage from "./components/KidDetailPage";
 import Header from "./components/Header";
 import AboutPage from "./components/AboutPage";
+import Footer from "./components/Footer";
 
 function App() {
   const [userName, setUserName] = useState("");
@@ -27,6 +28,7 @@ function App() {
         <Route path="/kid/:id" element={<KidDetailPage />} />
         <Route path="/about" element={<AboutPage />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
