@@ -6,6 +6,7 @@ import SignupPage from "./components/SignUpPage";
 import BrowsePage from "./components/BrowsePage";
 import KidDetailPage from "./components/KidDetailPage";
 import Header from "./components/Header";
+import AboutPage from "./components/AboutPage";
 
 function App() {
   const [userName, setUserName] = useState("");
@@ -24,6 +25,7 @@ function App() {
         />
         <Route path="/browse" element={<BrowsePage userName={userName} />} />
         <Route path="/kid/:id" element={<KidDetailPage />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
     </BrowserRouter>
   );

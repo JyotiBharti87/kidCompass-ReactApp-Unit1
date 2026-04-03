@@ -8,6 +8,11 @@ function Header() {
       <Link to="/" className="logo-container">
         <img src="/kidcompass_final.svg" alt="" className="logo" />
       </Link>
+      <div className="nav-links">
+        <Link to="/about" className="nav-link">
+          About
+        </Link>
+      </div>
     </header>
   );
 }
