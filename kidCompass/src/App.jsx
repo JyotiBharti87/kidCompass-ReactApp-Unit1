@@ -12,9 +12,10 @@ import FeedbackForm from "./components/FeedbackForm";
 
 function App() {
   const [userName, setUserName] = useState("");
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
   return (
     <BrowserRouter>
-      <Header />
+      <Header setFeedbackOpen={setFeedbackOpen} />
       <Routes>
         <Route path="/" element={<WelcomePage />} />
         <Route
@@ -29,7 +30,7 @@ function App() {
         <Route path="/kid/:id" element={<KidDetailPage />} />
         <Route path="/about" element={<AboutPage />} />
       </Routes>
-      <FeedbackForm />
+      <FeedbackForm open={feedbackOpen} setOpen={setFeedbackOpen} />
       <Footer />
     </BrowserRouter>
   );
