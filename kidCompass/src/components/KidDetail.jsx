@@ -15,7 +15,7 @@ function KidDetail({ kid, requested, setRequested }) {
       <div className="detail-header">
         <h1>{kid.name}</h1>
         <Button
-          text={requested ? "Sent ✅" : "Connect"}
+          text={requested ? "Sent" : "Connect"}
           onClick={() => setRequested(true)}
           disabled={requested}
           className="connect-btn"

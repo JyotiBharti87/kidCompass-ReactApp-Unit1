@@ -3,18 +3,31 @@ import { useNavigate, Link } from "react-router-dom";
 import "../App.css";
 
 function LoginPage({ setUserName }) {
-  const [name, setName] = useState("");
-  const [password, setPassword] = useState("");
+  const [loginData, setLoginData] = useState({
+    userName: "",
+    password: "",
+  });
   const navigate = useNavigate();
 
+  //handle input Change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setLoginData((prevData) => ({
+      ...prevData,
+
+      [name]: value,
+    }));
+  };
+  // Handle form submit
   const handleSubmit = (e) => {
     e.preventDefault();
+
     //validation
-    if (!name || !password) {
+    if (!loginData.userName || !loginData.password) {
       alert("Please enter name and password");
       return;
     }
-    setUserName(name);
+    setUserName(loginData.userName);
     navigate("/browse");
   };
   return (
@@ -24,15 +37,17 @@ function LoginPage({ setUserName }) {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            placeholder="Enter your Name."
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            name="userName"
+            placeholder="Enter userName"
+            value={loginData.userName}
+            onChange={handleChange}
           />
           <input
             type="password"
+            name="password"
             placeholder="Enter password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={loginData.password}
+            onChange={handleChange}
             required
           />
           <button type="submit">Sign In</button>
