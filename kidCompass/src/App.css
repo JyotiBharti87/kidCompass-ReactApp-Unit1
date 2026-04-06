@@ -496,3 +496,55 @@ th {
   font-size: 1rem;
   color: var(--secondary-color);
 }
+/* Floating button */
+.feedback-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  z-index: 1000;
+}
+
+/* Modal overlay */
+.feedback-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Form card */
+.feedback-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 320px;
+  position: relative;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+.preview-feedback {
+  text-align: left !important;
+  padding: 10px;
+  background: #f4fbff;
+  border-radius: 8px;
+}

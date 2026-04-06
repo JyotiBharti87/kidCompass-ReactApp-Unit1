@@ -24,7 +24,7 @@ function LoginPage({ setUserName }) {
 
     //validation
     if (!loginData.userName || !loginData.password) {
-      alert("Please enter name and password");
+      alert("Please enter userName and password");
       return;
     }
     setUserName(loginData.userName);
