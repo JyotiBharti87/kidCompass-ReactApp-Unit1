@@ -372,7 +372,7 @@ th {
   height: 60px;
   display: flex;
   align-items: center;
-  padding: 0 20px;
+  padding: 10px 20px;
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #dcecf8;
@@ -383,13 +383,13 @@ th {
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
   text-decoration: none;
 }
 
 .logo {
-  width: 168px;
-  height: 68px;
+  width: auto;
+  height: 80px;
   object-fit: contain;
 }
 
@@ -545,7 +545,7 @@ th {
   position: absolute;
   top: 8px;
   right: 10px;
-  background: rgb(107, 103, 103);
+  background: none;
   border: none;
   font-size: 16px;
   cursor: pointer;

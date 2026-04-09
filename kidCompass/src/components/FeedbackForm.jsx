@@ -17,7 +17,7 @@ export default function FeedbackForm({ open, setOpen }) {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert("Feedback submitted!");
+
     setFormData({
       name: "",
       email: "",
