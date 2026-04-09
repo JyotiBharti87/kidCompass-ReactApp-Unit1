@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import eventsData from "../EventsData.json";
 import "../App.css";
 
 function Events() {
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState(() => {
+    const saved = localStorage.getItem("events");
+    return saved ? JSON.parse(saved) : eventsData;
+  });
+
   const [editIndex, setEditIndex] = useState(null);
   const [formData, setFormData] = useState({
     title: "",
@@ -46,7 +51,7 @@ function Events() {
       description: "",
     });
   };
-  //edit even
+  //edit event
   const handleEdit = (index) => {
     setFormData(events[index]);
     setEditIndex(index);
@@ -65,6 +70,10 @@ function Events() {
       });
     }
   };
+  // Save to localStorage whenever events change
+  useEffect(() => {
+    localStorage.setItem("events", JSON.stringify(events));
+  }, [events]);
   return (
     <main className="app">
       <div className="detail-box">
