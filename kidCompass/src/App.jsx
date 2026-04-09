@@ -9,6 +9,7 @@ import Header from "./components/Header";
 import AboutPage from "./components/AboutPage";
 import Footer from "./components/Footer";
 import FeedbackForm from "./components/FeedbackForm";
+import Events from "./components/Events";
 
 function App() {
   const [userName, setUserName] = useState("");
@@ -29,7 +30,9 @@ function App() {
         <Route path="/browse" element={<BrowsePage userName={userName} />} />
         <Route path="/kid/:id" element={<KidDetailPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/events" element={<Events />} />
       </Routes>
+
       <FeedbackForm open={feedbackOpen} setOpen={setFeedbackOpen} />
       <Footer />
     </BrowserRouter>

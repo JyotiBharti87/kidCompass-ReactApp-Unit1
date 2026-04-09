@@ -11,6 +11,9 @@ function Header({ setFeedbackOpen }) {
       </Link>
       <div className="nav-links">
         <div className="nav-items">
+          <Link to="/events" className="nav-link">
+            Events
+          </Link>
           <Link to="/about" className="nav-link">
             About
           </Link>

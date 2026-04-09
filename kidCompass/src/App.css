@@ -545,7 +545,7 @@ th {
   position: absolute;
   top: 8px;
   right: 10px;
-  background: transparent;
+  background: rgb(107, 103, 103);
   border: none;
   font-size: 16px;
   cursor: pointer;
@@ -568,4 +568,33 @@ th {
 
 .social-apps a:hover {
   transform: scale(1.15);
+}
+.event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.event-card {
+  background: #f9fcff;
+  border: 1px solid #cfe7f8;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.event-card h3 {
+  margin-top: 0;
+}
+
+.event-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
 }
