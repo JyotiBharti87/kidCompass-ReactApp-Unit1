@@ -7,7 +7,7 @@ import "../App.css";
 function Events() {
   const navigate = useNavigate();
   const [events, setEvents] = useState(() => {
-    const saved = localStorage.getItem("events");
+    const saved = localStorage.removeItem("events");
     return saved ? JSON.parse(saved) : eventsData;
   });
 
@@ -126,7 +126,7 @@ function Events() {
                   <strong>Date:</strong> {event.date}
                 </p>
                 <p>
-                  <strong>City:</strong> {event.city}
+                  <strong>Address:</strong> {event.address}
                 </p>
                 <p>
                   <strong>Description:</strong> {event.description}
