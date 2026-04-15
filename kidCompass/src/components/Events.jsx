@@ -7,7 +7,7 @@ import "../App.css";
 function Events() {
   const navigate = useNavigate();
   const [events, setEvents] = useState(() => {
-    const saved = localStorage.removeItem("events");
+    const saved = localStorage.getItem("events");
     return saved ? JSON.parse(saved) : eventsData;
   });
 
