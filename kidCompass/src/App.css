@@ -20,7 +20,7 @@ body {
 .app {
   width: min(1200px, 94%);
   margin: auto;
-  padding: 80px 20px 30px;
+  padding: 95px 20px 30px;
   box-sizing: border-box;
   flex: 1;
 }
@@ -369,10 +369,10 @@ th {
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px;
+  min-height: 60px;
   display: flex;
   align-items: center;
-  padding: 10px 20px;
+  padding: 8px 16px;
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #dcecf8;
@@ -405,6 +405,7 @@ th {
   border: 2px solid #cfe7f8;
   border-radius: 12px;
   padding: 14px 18px;
+  margin-top: 12px;
   margin-bottom: 20px;
   font-size: 1.05rem;
   font-weight: 600;
@@ -459,6 +460,36 @@ th {
     right: 10%;
     bottom: 10%;
   }
+  .app-header {
+    padding: 8px 10px;
+    min-height: 60px;
+  }
+
+  .logo {
+    height: 44px;
+    width: auto;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+  .nav-items {
+    gap: 10px;
+  }
+
+  .nav-link,
+  .feedback-btn {
+    font-size: 0.9rem;
+  }
+
+  .social-apps {
+    gap: 6px;
+  }
+
+  .social-apps svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -474,47 +505,118 @@ th {
   .auth-card {
     padding: 24px 18px;
   }
+
+  .app-header {
+    padding: 6px 8px;
+  }
+
+  .logo {
+    height: 38px;
+  }
+
+  .nav-links {
+    gap: 8px;
+  }
+
+  .nav-items {
+    gap: 8px;
+  }
+
+  .nav-link,
+  .feedback-btn {
+    font-size: 0.85rem;
+  }
+
+  .social-apps {
+    gap: 5px;
+  }
+
+  .social-apps svg {
+    width: 18px;
+    height: 18px;
+  }
 }
+
+@media (max-width: 480px) {
+  .app-header {
+    padding: 6px 6px;
+  }
+
+  .logo {
+    height: 34px;
+  }
+
+  .nav-links {
+    gap: 6px;
+  }
+
+  .nav-items {
+    gap: 6px;
+  }
+
+  .nav-link,
+  .feedback-btn {
+    font-size: 0.75rem;
+  }
+
+  .social-apps {
+    gap: 4px;
+  }
+
+  .social-apps svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
 .connect-btn:disabled {
   background-color: var(--accent-color);
   cursor: not-allowed;
 }
+
 .nav-links {
   margin-left: auto;
   display: flex;
   align-items: center;
   gap: 20px;
 }
+
 .nav-items {
   display: flex;
   gap: 15px;
 }
+
 .nav-link {
   text-decoration: none;
   font-weight: 600;
   color: var(--secondary-color);
   cursor: pointer;
 }
+
 .nav-link:hover {
   color: var(--primary-color);
 }
+
 .app-footer {
   text-align: center;
   padding: 15px;
   font-size: 1rem;
   color: var(--secondary-color);
 }
-/* Floating button */
+
 .feedback-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: var(--accent-color);
-  color: white;
-  padding: 10px 14px;
-  border-radius: 20px;
+  background: none;
+  color: var(--secondary-color);
+  padding: 0;
+  border: none;
+  border-radius: 0;
   font-weight: 600;
-  z-index: 1000;
+  cursor: pointer;
+}
+
+.feedback-btn:hover {
+  background: none;
+  color: var(--primary-color);
 }
 
 /* Modal overlay */
